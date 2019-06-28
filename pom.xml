@@ -18,6 +18,7 @@
 
     <modules>
         <module>sock-merchant</module>
+        <module>counting-valleys</module>
     </modules>
 
     <dependencies>
