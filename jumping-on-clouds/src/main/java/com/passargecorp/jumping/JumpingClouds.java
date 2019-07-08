@@ -9,20 +9,25 @@ public class JumpingClouds {
 
         if(c.length == 0 || !canStartAndFinish(c)) {
 
-            return 0;
+            return -1;
         }
         return findOptomizedSolution(c);
     }
 
     static boolean canStartAndFinish(int[] c) {
 
-        return c.length > 1 && c[0] == 0 && c[c.length - 1] == 0;
+        return c.length > 0 && c[0] == 0 && c[c.length - 1] == 0;
     }
 
     static int findOptomizedSolution(int[] c) {
 
         List<Integer> solution = new ArrayList<>();
         solution.add(0);
+
+        // Special case for c.length == 1
+        if(c.length == 1) {
+            return 0;
+        }
 
         for(int i = 1; i < c.length - 2; i++) {
             if(c[(i + 1)] == 0) {
@@ -31,7 +36,7 @@ public class JumpingClouds {
             } else if(c[i] == 0) {
                 solution.add(i);
             } else {
-                return 0;
+                return -1;
             }
         }
         solution.add(c.length - 1);

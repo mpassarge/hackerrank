@@ -29,14 +29,24 @@ public class TestJumpingClouds {
         int[] c = {};
 
         // Solution {}
-        Assert.assertEquals(0, JumpingClouds.jumpingOnClouds(c));
+        Assert.assertEquals(-1, JumpingClouds.jumpingOnClouds(c));
     }
 
     @Test
     public void testJumpingOnClouds_oneJumpCloud() {
 
         int[] c = {0, 0};
+
+        // Solution {0,1}
         Assert.assertEquals(1, JumpingClouds.jumpingOnClouds(c));
+    }
+
+    @Test
+    public void testJumpingOnClouds_NoGoCloudatEnd() {
+
+        int[] c = {0, 1};
+
+        Assert.assertEquals(-1, JumpingClouds.jumpingOnClouds(c));
     }
 
     @Test
@@ -45,7 +55,7 @@ public class TestJumpingClouds {
         int[] c = {1, 1, 1, 1, 1};
 
         // Solution {}
-        Assert.assertEquals(0, JumpingClouds.jumpingOnClouds(c));
+        Assert.assertEquals(-1, JumpingClouds.jumpingOnClouds(c));
     }
 
     @Test
@@ -58,10 +68,19 @@ public class TestJumpingClouds {
     }
 
     @Test
-    public void testJumpingOnClouds_incompletePuzzel() {
+    public void testJumpingOnClouds_incompletePuzzle() {
 
         int[] c = {0, 1, 0, 0, 1, 1, 0};
 
+        Assert.assertEquals(-1, JumpingClouds.jumpingOnClouds(c));
+    }
+
+    @Test
+    public void testJumpingOnClouds_zeroJumps() {
+
+        int[] c = {0};
+
+        // Solution {}
         Assert.assertEquals(0, JumpingClouds.jumpingOnClouds(c));
     }
 }
