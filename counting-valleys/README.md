@@ -14,4 +14,9 @@ __Output__ 1
 
 ## What did I learn?
 
-* 
+* Sometimes overthinking the solution wastes time. 
+    * I spent about 30 to 40 minutes trying to solve this solution with a Stack
+    but realized that a Stack is LIFO(Last In First Out), which would only work if
+    I added these array items in backwards. 
+* Read documentation before trying to implement a different Data Structure
+    * (Same as above)
