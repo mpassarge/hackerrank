@@ -19,3 +19,5 @@ __Output__ 3
 [Problem Statement](jumping-on-the-clouds.pdf)
 
 ## What did I learn?
+* As stated in previous challenges, write a number of tests with different inputs, number of inputs, etc...
+Try to get edge cases as well. 
