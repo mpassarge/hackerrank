@@ -10,7 +10,6 @@ public class TestRepeatString {
 
         String s = "aba";
         long n = 10L;
-
         Assert.assertEquals(7, RepeatString.repeatedString(s, n));
     }
 
@@ -22,4 +21,5 @@ public class TestRepeatString {
 
         Assert.assertEquals(1000000000000L, RepeatString.repeatedString(s, n));
     }
+
 }
