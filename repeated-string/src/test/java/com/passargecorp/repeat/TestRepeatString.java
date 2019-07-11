@@ -22,4 +22,21 @@ public class TestRepeatString {
         Assert.assertEquals(1000000000000L, RepeatString.repeatedString(s, n));
     }
 
+    @Test
+    public void testRepeatString_firstCharacter() {
+
+        String s = "aba";
+        long n = 1L;
+
+        Assert.assertEquals(1L, RepeatString.repeatedString(s, n));
+    }
+
+    @Test
+    public void testRepeatString_zeroOccurrences() {
+
+        String s = "bcd";
+        long n = 1000000000000L;
+
+        Assert.assertEquals(0L, RepeatString.repeatedString(s, n));
+    }
 }

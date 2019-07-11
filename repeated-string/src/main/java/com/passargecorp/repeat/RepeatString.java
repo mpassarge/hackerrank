@@ -4,26 +4,35 @@ public class RepeatString {
 
     static long repeatedString(String s, long n) {
 
-        long total = 0;
+        // Assume s.length() != 0 and s != null
 
-        long aCount = s.chars()
-                       .filter(c -> c == 'a')
-                       .count();
+        long total = 0;
+        long aCount = numberOfAs(s);
+
+        // Handle special case to short circuit
+        if(aCount == 0) {
+            return 0;
+        }
 
         int lengthOfString = s.length();
 
-        long numberOfFullRepetedStrings = n / lengthOfString;
+        long numberOfRepeatsOfFullString = n / lengthOfString;
         long remainder = n % lengthOfString;
 
+        total += numberOfRepeatsOfFullString * aCount;
 
-        total += numberOfFullRepetedStrings * aCount;
-
-        String remainingRepeat = s.substring(0, (int) remainder);
-
-        total += remainingRepeat.chars()
-                                .filter(c -> c == 'a')
-                                .count();
+        // Not count remainder if not needed
+        if(remainder != 0) {
+            total += numberOfAs(s.substring(0, (int) remainder));
+        }
 
         return total;
+    }
+
+    static long numberOfAs(final String s) {
+
+        return s.chars()
+                .filter(c -> c == 'a')
+                .count();
     }
 }
